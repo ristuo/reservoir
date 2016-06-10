@@ -4,8 +4,8 @@
 #include <iostream>
 
 Params Params::parse_parameters(int argc, char **argv) {
-    if (argc < 3) {
-        std::cout << "USAGE " << argv[0] << " [sample size] [file path]" << std::endl;
+    if ( (argc < 2) || argc > 3) {
+        std::cout << "USAGE " << argv[0] << "SAMPLE_SIZE [SOURCE]" << std::endl;
         exit(1);
     }
 
@@ -14,5 +14,9 @@ Params Params::parse_parameters(int argc, char **argv) {
         std::cout << "First parameter should be an integer for sample size!" << std::endl; 
         exit(1);
     }
-    return Params(sample_size, argv[2]);
+    if (argc == 3) {
+        return Params(sample_size, argv[2]);
+    } else {
+        return Params(sample_size);
+    }
 }
