@@ -1,5 +1,5 @@
 # reservoir
-Reservoir sampling implementation to replace the inefficient GNU shuf that is, to pick uniformly at random n lines from a file. Turned out that shuf is somewhat faster, maybe it does use reservoir sampling after all.
+Reservoir sampling implementation to replace the inefficient GNU shuf that is, to pick uniformly at random n lines from a file. Contra random poster at stackoverflow shuf is actually pretty fast, on 7 million records shuf runs in 35 seconds, this implementation in 30 or so. 
 
 ##Compiling
 ```sh 
